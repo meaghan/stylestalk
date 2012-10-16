@@ -112,8 +112,12 @@ html {
 	border-radius: 30px;
 }
 
-.invite-button:hover {
+#invite-button :hover {
 	background-color: #555;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+
 }
 
 .invite-button-text {
