@@ -11,17 +11,125 @@
  *= require_self
  *= require_tree .
  */
-
-
-html { 
+/*
 	background: url(bg.jpeg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+*/
+
+@font-face {
+  font-family: ProximaNova-Regular;
+  src: url("ProximaNova-Regular.otf");
 }
 
-#container {
+html { 	
+	height:100%;
+}
+
+.top {
+	height:330px;
+}
+
+.middle {
+	height:100px;
+}
+
+.invite-container {
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	perspective: 800px;
+}
+
+#card {
+	width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
+	-o-transition: -o-transform 1s;
+	transition: transform 1s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+#card figure {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+}
+
+
+#card .front {
+  background: red;
+	text-align: center;
+	font-size: 15px;
+}
+#card .back {
+  background: blue;
+	text-align: center;
+	font-size: 15px;
+	-webkit-transform: rotateY( 180deg );
+	-moz-transform: rotateY( 180deg );
+	-o-transform: rotateY( 180deg );
+	transform: rotateY( 180deg );  
+}
+
+#card.flipped {
+	-webkit-transform: rotateY( 180deg );
+	-moz-transform: rotateY( 180deg );
+	-o-transform: rotateY( 180deg );
+	transform: rotateY( 180deg );
+}
+
+.invite-logo {
+	width: 80px;
+	left: 10px;
+	height: 40px;
+	float: right;
+	position: relative;
+	top: 130px;
+}
+
+#invite-button {
+	position: relative;
+	top: 90px;
+	cursor: pointer;
+	background-color: #5bd89d;
+	width: 147px;
+	height: 31px;
+	margin: 0 auto;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+.invite-button:hover {
+	background-color: #555;
+}
+
+.invite-button-text {
+	color:white;
+	font-size: 11px;
+	padding: 10px 9px 9px 28px
+}
+
+/*25px*/
+
+body{
+	font-family: ProximaNova-Regular;
+ 	background: black url(bg.jpeg) no-repeat top center fixed;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	height:100%;
 }
 
 
@@ -56,3 +164,4 @@ html {
    Page Name 2
 ----------------------------------------- */
 
+	
