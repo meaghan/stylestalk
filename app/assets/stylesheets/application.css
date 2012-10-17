@@ -37,10 +37,19 @@ html {
 }
 
 .invite-container {
+	width: 335px;
+	height: 423px;
+	background: url(note.png) no-repeat top center;	
+}
+
+
+/* Used for invite form */
+.invitation-container {
 	-webkit-perspective: 800px;
 	-moz-perspective: 800px;
-	perspective: 800px;
+	perspective: 800px;	
 }
+
 
 #card {
 	width: 100%;
