@@ -26,6 +26,7 @@
 
 html { 	
 	height:100%;
+	overflow: hidden;
 }
 
 .top {
@@ -39,13 +40,22 @@ html {
 #invite-row {
 /*	height: 80%;*/
 /*	height: 130%;*/
-	position: relative;
-	overflow: hidden;
-/*	bottom:650px;*/
+	position: relative;	
+	bottom:-13%;
+}
+
+#invite-form {
+	position: absolute;
+	z-index: 1000;
+	top: 45%;
+	width: 96%;
+	height: 50%;
+	text-align: center;
+/*	font-size: 25px;*/
 }
 
 /* Used for invite form */
-.invite-form-container {
+#invite-form-container {
 /*	background: url(invite_logo_front.png) no-repeat top center;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
@@ -55,6 +65,13 @@ html {
 	-moz-perspective: 800px;
 	perspective: 800px;	
 */
+}
+
+.invite-form-content {
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	margin-bottom: 12px;
 }
 
 #invite-button {
@@ -81,9 +98,42 @@ html {
 }
 
 .invite-button-text {
-	color:white;
+	color: white;
 	font-size: 11px;
-	padding: 10px 9px 15px 28px
+	padding: 9px 9px 15px 28px;
+	font-weight: 300;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+
+}
+
+#rsvp-button {
+	width: 115px;
+	height: 25px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background-color: #ccc;
+	margin: 0 auto;
+}
+
+#rsvp-button :hover {
+	width: 115px;
+	height: 25px;
+	background-color: #555;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+.rsvp-button-text {
+	color: white;
+	font-size: 9px;
+	font-weight: 400;
+	padding-top: 7px;
+	padding-left: 5px;
+	letter-spacing: 2px;
 }
 
 /*25px*/
