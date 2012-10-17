@@ -36,6 +36,29 @@
   
 </div>
 
+
+<script>
+$(document).ready(function() {
+
+  $('#invite-button').click(function() {
+    $('#invite-row').animate({    
+      bottom: '+=80%',
+    }, 300, function() {
+      // Animation complete. turn it off
+      $('#invite-button').click(function() {});
+    });
+  });
+
+
+  $("#rsvp-button").click(function(){
+    $("#card").toggleClass('flipped');
+  });
+
+  
+})
+
+</script>
+
 <!-- - fix MBA: WTF is wrong with it?!
 - how to position background text (with multiple devices)
 - how to transition

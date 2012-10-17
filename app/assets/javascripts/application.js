@@ -14,20 +14,20 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).ready(function() {
-
-  $('#invite-button').click(function() {
-    $('#invite-row').animate({    
-      bottom: '+=80%',
-    }, 300, function() {
-      // Animation complete.
-    });
-  });
-
-
-  $("#rsvp-button").click(function(){
-    $("#card").toggleClass('flipped');
-  });
-
-  
-})
+// $(document).ready(function() {
+// 
+//   $('#invite-button').click(function() {
+//     $('#invite-row').animate({    
+//       bottom: '+=80%',
+//     }, 300, function() {
+//       // Animation complete.
+//     });
+//   });
+// 
+// 
+//   $("#rsvp-button").click(function(){
+//     $("#card").toggleClass('flipped');
+//   });
+// 
+//   
+// })
