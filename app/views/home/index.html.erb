@@ -1,26 +1,39 @@
 
 
 
-<div class="row top">
-
-</div>
+<div class="row top"></div>
 
 <div class="row middle">
-  <div class="four columns">
+  <div class="three columns"></div>
+  <div class="six columns" style="height: 100%">
+    <img src="assets/note.png" />
+    <div id="invite-button">
+      <a href="#"><div class="invite-button-text">YOUR INVITATION</div></a>
+    </div>  
   </div>
-  <div class="four columns">
-    <div class="invite-container">
-    </div>
+  <div class="three columns"></div>
+</div>
+
+<div class="row" id="invite-row">
+  <div class="one columns"></div>
+  <div class="ten columns invite-form-container">
+    <img src="assets/invite_logo_front.png" />
     
   </div>
-  <div class="four columns">
-  </div>
+  <div class="two columns"></div>
+  
 </div>
 
 <script>
-$("#invite-button").click(function(){
-  $("#card").toggleClass('flipped');
-});
+$('#invite-button').click(function() {
+  $('#invite-row').animate({    
+    bottom: '+=650',
+  }, 300, function() {
+    // Animation complete.
+  });
+});// $("#invite-button").click(function(){
+//   $("#card").toggleClass('flipped');
+// });
 </script>
 
 <!-- - fix MBA: WTF is wrong with it?!
