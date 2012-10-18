@@ -1,7 +1,5 @@
-
-
-
 <div class="row top"></div>
+
 
 <div class="row middle">
   <div class="three columns"></div>
@@ -14,50 +12,102 @@
   <div class="three columns"></div>
 </div>
 
+
 <div class="row" id="invite-row">
+
   <div class="one columns"></div>
   <div class="ten columns" id="invite-form-container">
-    <img src="assets/invite_logo_front.png" />
+    <img src="assets/invite_front.png" />
     <div id="invite-form">
-      <div class='invite-form-content'>Mr. / Ms. ..........  ..........</div> 
+      <form action="/home" accept-charset="UTF-8" method="post">
+        <input type="hidden" id="invite_form_sex" name="user[sex]" value="F" />
 
-      <div class='invite-form-content'>Event details should be sent to ..........  .</div> 
-      <br/><br/>
-      <div class='invite-form-content'>For reference, I usually wear a size .... in clothes and  .... in shoes.</div> 
+        <div class="invite-input-line">
+          <label for="name" class='invite-form-content'>Mr. / Ms. </label>
+          <input type="text" id="invite_form_first_name" class="invite_form_input" name="user[first_name]" style="width: 100px;" placeholder="first" />
+          <input type="text" id="invite_form_last_name" class="invite_form_input" name="user[last_name]" style="width: 100px; margin-left: 12px" placeholder="last" />
+        </div>      
 
-      <div class='invite-form-content'>The individual whose style I most admire is ........   . </div>
-      <br/>
-      <div id="rsvp-button">
-        <a href="#"><div class="rsvp-button-text">R.S.V.P.</div></a>
+        <div>
+          <label for="name" class='invite-form-content'>Event details should be sent to </label> 
+          <input type="text" id="invite_form_email_address" class="invite_form_input" name="user[email]" placeholder="e-mail address" />
+          <label for="name" class='invite-form-content'>.</label> 
+        </div>      
+
+        <br />
+        <br />
+
+        <div class="invite-input-line">
+          <label for="name" class='invite-form-content'>For reference, I usually wear a size</label> 
+          <input type="text" id="invite_form_clothes_size" class="invite_form_input" name="user[clothes_size]" style="width: 30px;" placeholder="#" />
+          <label for="name" class='invite-form-content'>in clothes and</label> 
+          <input type="text" id="invite_form_shoe_size" class="invite_form_input" name="user[shoe_size]" style="width: 30px;" placeholder="#" />
+          <label for="name" class='invite-form-content'>in shoes.</label>             
+        </div>      
+
+        <div class="invite-input-line">
+          <label for="name" class='invite-form-content'>The individual whose style I most admire is</label>
+          <input type="text" id="invite_form_admired_individual" class="invite_form_input" name="user[admired]" style="width: 180px;" placeholder="e.g. carine roitfeld" />
+          <label for="name" class='invite-form-content'>.</label>             
+        </div>
+        <br />
+
+        <div id="rsvp-button">
+          <a href="#"><div class="rsvp-button-text">R.S.V.P.</div></a>
+        </div>
+
+        <br/>
       </div>
     </div>
   </div>
-  <div class="two columns"></div>
-  
+
+  <div class="one columns"></div>
+
 </div>
 
 
 <script>
 $(document).ready(function() {
+  // 
+  // $('#invite-row').animate({    
+    //   bottom: '+=80%',
+    // }, 300, function() {
+      //   // Animation complete. turn it off
+      //   $('#invite-button').click(function() {});
+      // });
+      // 
+      // 
+      $('#invite-button').click(function() {
+        $('#invite-row').animate({    
+          bottom: '+=80%',
+        }, 300, function() {
+          console.log()      
+        });
+        $('#invite-button').click(function() {});
+      });
 
-  $('#invite-button').click(function() {
-    $('#invite-row').animate({    
-      bottom: '+=80%',
-    }, 300, function() {
-      // Animation complete. turn it off
-      $('#invite-button').click(function() {});
-    });
-  });
+
+      $("#rsvp-button").click(function() {
+        $($('form')[0]).submit(function(e) {
+          alert("HEY!")
+        });  
+      });
+      // 
+      // 
+      // 
+      // 
+      // $.ajax({
+      //   type: 'POST',
+      //   url: url,
+      //   data: data,
+      //   success: success,
+      //   dataType: dataType
+      // });
 
 
-  $("#rsvp-button").click(function(){
-    $("#card").toggleClass('flipped');
-  });
+    })
 
-  
-})
-
-</script>
+    </script>
 
 <!-- - fix MBA: WTF is wrong with it?!
 - how to position background text (with multiple devices)
@@ -83,7 +133,7 @@ Your presence is requested at the launch of
 STYLE/STALK [Logo?]
 
 Mr. / Ms. [First Name] [Last Name]
- Event details should be sent to [Email Address].
- 
+Event details should be sent to [Email Address].
+
 For reference, I usually wear a size [#] in clothes and [#] in shoes.
 The individual whose style I most admire is [e.g. Carine Roitfield]. -->

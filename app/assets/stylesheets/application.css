@@ -24,6 +24,11 @@
   src: url("ProximaNova-Regular.otf");
 }
 
+@font-face {
+	font-family: hasty-tasty;
+	src: url("DK HastyTasty.ttf");
+}
+
 html { 	
 	height:100%;
 	overflow: hidden;
@@ -68,16 +73,51 @@ html {
 }
 
 .invite-form-content {
+	display: inline;
 	font-size: 20px;
 	font-weight: 300;
 	letter-spacing: 1px;
 	margin-bottom: 12px;
 }
 
+.invite_form_input {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	padding: 0px;
+}
+
+input {
+	color: #00e29c;
+	bottom: 2px;
+	font-family: hasty-tasty;
+	font-size: 30px;
+	outline: none;
+	border-bottom: 1px dotted #9a9a9a;
+	background-color: transparent;
+	text-align: center;
+}
+
+input::-webkit-input-placeholder {
+    color:    #ddd;
+}
+input:-moz-placeholder {
+    color:    #ddd;
+}
+input:-ms-input-placeholder {
+    color:    #ddd;
+}
+
+
+.invite-input-line {
+	margin-bottom: 10px;
+}
+
 #invite-button {
 	position: relative;
 	cursor: pointer;
-	background-color: #00e29c;
+/*	background-color: #00e29c;*/
+	background-color:	#00FFAA;
 	width: 147px;
 	height: 30px;
 	margin: 0 auto;
