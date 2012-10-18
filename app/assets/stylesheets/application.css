@@ -88,7 +88,7 @@ html {
 }
 
 input {
-	color: #00e29c;
+	color: #5BD89D;
 	bottom: 2px;
 	font-family: hasty-tasty;
 	font-size: 30px;
@@ -117,7 +117,7 @@ input:-ms-input-placeholder {
 	position: relative;
 	cursor: pointer;
 /*	background-color: #00e29c;*/
-	background-color:	#00FFAA;
+	background-color:	#5BD89D;
 	width: 147px;
 	height: 30px;
 	margin: 0 auto;
