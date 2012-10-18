@@ -3,7 +3,7 @@
 
 <div class="row middle">
   <div class="three columns"></div>
-  <div class="six columns" style="height: 100%">
+  <div class="six columns" id="initial-invite" style="height: 100%">
     <img src="assets/note.png" />
     <div id="invite-button">
       <a href="#"><div class="invite-button-text">YOUR INVITATION</div></a>
@@ -59,9 +59,12 @@
         <br/>
       </div>
     </div>
+    <div class="one columns"></div>
   </div>
 
-  <div class="one columns"></div>
+
+  <div id="thank-you"><img src="assets/invite_back.png" /></div>
+
 
 </div>
 
@@ -78,9 +81,10 @@ $(document).ready(function() {
       // 
       // 
       $('#invite-button').click(function() {
+        $("#initial-invite").fadeOut(400);
         $('#invite-row').animate({    
           bottom: '+=80%',
-        }, 300, function() {
+        }, 400, function() {
           console.log()      
         });
         $('#invite-button').click(function() {});
@@ -88,21 +92,20 @@ $(document).ready(function() {
 
 
       $("#rsvp-button").click(function() {
-        $($('form')[0]).submit(function(e) {
-          alert("HEY!")
+        $.ajax({
+          type: 'POST',
+          url: '/home',
+          data: $($('form')[0]).serialize()
         });  
+        
+        
+        $("#invite-form-container").fadeOut(500, function() {
+             $("#invite-form-container").html($("#thank-you").html());
+            });
+        $("#invite-form-container").fadeIn(500);
+        
+        
       });
-      // 
-      // 
-      // 
-      // 
-      // $.ajax({
-      //   type: 'POST',
-      //   url: url,
-      //   data: data,
-      //   success: success,
-      //   dataType: dataType
-      // });
 
 
     })
