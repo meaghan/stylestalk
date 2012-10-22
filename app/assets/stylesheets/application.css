@@ -1,27 +1,27 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*= require_tree .
+*/
 /*
-	background: url(bg.jpeg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+background: url(bg.jpeg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 */
 
 @font-face {
-  font-family: ProximaNova-Regular;
-  src: url("ProximaNova-Regular.otf");
+	font-family: ProximaNova-Regular;
+	src: url("ProximaNova-Regular.otf");
 }
 
 @font-face {
@@ -30,23 +30,23 @@
 }
 
 html { 	
-	height:100%;
+	height: 100%;
 	overflow: hidden;
 }
 
 .top {
-	height:33%;
+	height:20%;
 }
 
 .middle {
-	height:50%;
+	height:65%;
 }
 
 #invite-row {
 /*	height: 80%;*/
 /*	height: 130%;*/
-	position: relative;	
-	bottom:-13%;
+position: relative;	
+bottom:-13%;
 }
 
 #invite-form {
@@ -56,28 +56,78 @@ html {
 	width: 96%;
 	height: 50%;
 	text-align: center;
-/*	font-size: 25px;*/
+}
+
+#thank-you-container {
+	display: none;
+}
+
+#thank-you {
+	position: absolute;
+	z-index: 1000;
+	top: 0%;
+	width: 96%;
+	height: 50%;
+	text-align: center;
+}
+
+#email-button {
+	top: 345px;
+	height: 30px;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	background:transparent url('button_email.png') center top no-repeat;
+}
+
+#email-button:hover {
+	background-image: url('button_email_hover.png');
 }
 
 /* Used for invite form */
 #invite-form-container {
 /*	background: url(invite_logo_front.png) no-repeat top center;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
+-moz-background-size: cover;
+-webkit-background-size: cover;
 */
 /*	height: 100%;*/
 /*	-webkit-perspective: 800px;
-	-moz-perspective: 800px;
-	perspective: 800px;	
+-moz-perspective: 800px;
+perspective: 800px;	
 */
+}
+
+.input-error {		
+	color: red;
+	font-size: 9px;
+	display: none;
+	position: absolute;
+	top: 23px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	opacity: 0.5;
+}
+
+#error-first-name {
+	left: 310px;
+}
+
+#error-last-name {
+	left: 448px;
+}
+
+#invite_form_email_address {
+	left: 0px;
+	width: 200px;
 }
 
 .invite-form-content {
 	display: inline;
 	font-size: 20px;
-	font-weight: 300;
-	letter-spacing: 1px;
+	font-weight: 400;
+	letter-spacing: 0px;
 	margin-bottom: 12px;
+	font-family: ProximaNova-Regular;;
 }
 
 .invite_form_input {
@@ -85,13 +135,16 @@ html {
 	border-right: none;
 	border-left: none;
 	padding: 0px;
+	height: 25px;
+	line-height: 25px;
+	position: relative;
 }
 
 input {
 	color: #5BD89D;
 	bottom: 2px;
 	font-family: hasty-tasty;
-	font-size: 30px;
+	font-size: 25px;
 	outline: none;
 	border-bottom: 1px dotted #9a9a9a;
 	background-color: transparent;
@@ -99,53 +152,49 @@ input {
 }
 
 input::-webkit-input-placeholder {
-    color:    #ddd;
+	color:    #ddd;
 }
 input:-moz-placeholder {
-    color:    #ddd;
+	color:    #ddd;
 }
 input:-ms-input-placeholder {
-    color:    #ddd;
+	color:    #ddd;
 }
 
 
 .invite-input-line {
-	margin-bottom: 10px;
+	margin-bottom: 12px;
 }
 
 #invite-button {
+	position: absolute;
+	top: 0%;
+	width: 96%;
+	height: 50%;
+	text-align: center;
+}
+
+#invite-button-link {	
+	top: 320px;
+	height: 30px;
 	position: relative;
-	cursor: pointer;
-/*	background-color: #00e29c;*/
-	background-color:	#5BD89D;
-	width: 147px;
-	height: 30px;
+	display: block;
 	margin: 0 auto;
-	bottom: 210px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
+	background:transparent url('button_invite.png') center top no-repeat;
 }
 
-#invite-button :hover {
-	background-color: #555;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-	width: 147px;
-	height: 30px;
-
+/* this is kinda hacky to make it gray */
+.invite-input-line span {
+	color: #ccc;
 }
-
-.invite-button-text {
-	color: white;
-	font-size: 11px;
-	padding: 9px 9px 15px 28px;
-	font-weight: 300;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-
+.invite_form_gender {
+	cursor: pointer;
+}
+#invite_form_ms {
+}
+#invite_form_mr {
+}
+.selected-gender {
 }
 
 #rsvp-button {
@@ -180,7 +229,7 @@ input:-ms-input-placeholder {
 
 body{
 	font-family: ProximaNova-Regular;
- 	background: black url(bg.jpeg) no-repeat top center fixed;
+	background: black url(bg.jpeg) no-repeat top center fixed;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
 	height:100%;
@@ -192,11 +241,14 @@ body{
 
 
 
+
+/* Cardflip stuf TBD */
+
 #card {
 	width: 100%;
-  height: 100%;
-  position: absolute;
-  -webkit-transition: -webkit-transform 1s;
+	height: 100%;
+	position: absolute;
+	-webkit-transition: -webkit-transform 1s;
 	-moz-transition: -moz-transform 1s;
 	-o-transition: -o-transform 1s;
 	transition: transform 1s;
@@ -207,11 +259,11 @@ body{
 }
 
 #card figure {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-o-backface-visibility: hidden;
@@ -219,12 +271,12 @@ body{
 
 
 #card .front {
-  background: red;
+	background: red;
 	text-align: center;
 	font-size: 15px;
 }
 #card .back {
-  background: blue;
+	background: blue;
 	text-align: center;
 	font-size: 15px;
 	-webkit-transform: rotateY( 180deg );
@@ -244,7 +296,7 @@ body{
 /* Artfully masterminded by ZURB  */
 
 /* -------------------------------------------------- 
-   Table of Contents
+Table of Contents
 -----------------------------------------------------
 :: Shared Styles
 :: Page Name 1
@@ -253,20 +305,19 @@ body{
 
 
 /* -----------------------------------------
-   Shared Styles
+Shared Styles
 ----------------------------------------- */
 
 
 
 /* -----------------------------------------
-   Page Name 1
+Page Name 1
 ----------------------------------------- */
 
 
 
 
 /* -----------------------------------------
-   Page Name 2
+Page Name 2
 ----------------------------------------- */
 
-	

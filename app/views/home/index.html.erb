@@ -1,16 +1,17 @@
 <div class="row top"></div>
 
-
 <div class="row middle">
   <div class="three columns"></div>
   <div class="six columns" id="initial-invite" style="height: 100%">
     <img src="assets/note.png" />
     <div id="invite-button">
-      <a href="#"><div class="invite-button-text">YOUR INVITATION</div></a>
+
+      <a href="#" id='invite-button-link'></a>
     </div>  
   </div>
   <div class="three columns"></div>
 </div>
+
 
 
 <div class="row" id="invite-row">
@@ -20,16 +21,21 @@
     <img src="assets/invite_front.png" />
     <div id="invite-form">
       <form action="/home" accept-charset="UTF-8" method="post">
-        <input type="hidden" id="invite_form_sex" name="user[sex]" value="F" />
+        <input type="hidden" id="invite_form_sex" name="user[sex]" value="f" />
 
         <div class="invite-input-line">
-          <label for="name" class='invite-form-content'>Mr. / Ms. </label>
-          <input type="text" id="invite_form_first_name" class="invite_form_input" name="user[first_name]" style="width: 100px;" placeholder="first" />
-          <input type="text" id="invite_form_last_name" class="invite_form_input" name="user[last_name]" style="width: 100px; margin-left: 12px" placeholder="last" />
+          <span id='invite_form_mr' class='invite_form_gender'>Mr.</span>
+          <span id='invite_form_slash' class='invite_form_gender'>/</span>
+          <span id='invite_form_ms' class='invite_form_gender selected-gender' style="color: black;">Ms.</span>
+          <div class="input-error" id='error-first-name'>REQUIRED</div>
+          <input type="text" id="invite_form_first_name" class="invite_form_input" name="user[first_name]" style="width: 120px;" placeholder="first" />
+          <div class="input-error" id= 'error-last-name'>REQUIRED</div>
+          <input type="text" id="invite_form_last_name" class="invite_form_input" name="user[last_name]" style="width: 120px; margin-left: 12px" placeholder="last" />
         </div>      
 
         <div>
           <label for="name" class='invite-form-content'>Event details should be sent to </label> 
+          <div class="input-error" id="input-error-email" style="top: 60px;left: 400px;">PLEASE ENTER A VALID EMAIL</div>
           <input type="text" id="invite_form_email_address" class="invite_form_input" name="user[email]" placeholder="e-mail address" />
           <label for="name" class='invite-form-content'>.</label> 
         </div>      
@@ -62,53 +68,145 @@
     <div class="one columns"></div>
   </div>
 
+  
 
-  <div id="thank-you"><img src="assets/invite_back.png" /></div>
+</div>
 
-
+<!-- THANK YOU SECTION -->
+<div id="thank-you-container">
+  <img src="assets/invite_back.png" />
+  <div id='thank-you'>
+    <a href="#" id='email-button'></a>
+  </div>
+  
 </div>
 
 
 <script>
 $(document).ready(function() {
-  // 
+
+  // // TURN THIS OFF BEFORE PUSHING
   // $('#invite-row').animate({    
-    //   bottom: '+=80%',
-    // }, 300, function() {
-      //   // Animation complete. turn it off
-      //   $('#invite-button').click(function() {});
-      // });
-      // 
-      // 
+  //     bottom: '+=80%',
+  //   }, 300, function() {
+  //       // Animation complete. turn it off
+  //       $('#invite-button').click(function() {});
+  //       $("#initial-invite").hide()
+  //       $("#invite-form-container").html($("#thank-you-container").html());
+  //   });      
+
+
+      // AH: This is a weird positioning of the invite button at top before everything loads
+      // to hack around it I'm just hiding it for a bit
+      setTimeout(function() {
+        $("#invite-button").show()
+      }, 10)
+      // AH: hack for :hover psuedoselector not working for some reason
+      $("#invite-button-link").hover(function(){
+        $(this).css("background-image", "url('assets/button_invite_hover.png')")
+      });
+      
+      
+      $('form').keyup(function() {
+        // clear errors
+        $('.input-error').hide();
+        
+        // check first, last, email filled out
+        // turn rsvp green if so
+        if (validateForm() === true) {
+          $("#rsvp-button").css('background-color', "#5BD89D"); 
+        } else {
+          $("#rsvp-button").css('background-color', "#ccc"); 
+        }
+      });            
+      
       $('#invite-button').click(function() {
-        $("#initial-invite").fadeOut(400);
+        $("#initial-invite").fadeOut(400);        
         $('#invite-row').animate({    
           bottom: '+=80%',
         }, 400, function() {
-          console.log()      
+          // console.log()      
         });
         $('#invite-button').click(function() {});
       });
 
 
       $("#rsvp-button").click(function() {
+        var formState = validateForm();
+        if (formState === true) {
+          submitForm();
+        } else {
+          displayErrors(formState);
+        }
+      });
+
+      $("#invite_form_mr, #invite_form_ms").on({
+        mouseenter: function(e) {
+          if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).css("color", "#5BD89D")
+        },
+        mouseleave: function(e) {          
+          if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).css("color", "#ccc")
+        },
+        click: function(e) {
+          $("#invite_form_mr, #invite_form_ms").removeClass("selected-gender")
+          $("#invite_form_mr, #invite_form_ms").css("color", "#ccc")
+          $(e.target).addClass("selected-gender");
+          $(e.target).css("color", "black");
+
+          var gender = $('.selected-gender').attr('id');
+          if (gender == 'invite_form_mr') {
+            $('#invite_form_sex').val("m")
+          } else {
+            $('#invite_form_sex').val("f")
+          }
+          
+        }
+      })
+
+      function displayErrors (formState) {
+        if (!formState['firstNameValid']) $('#error-first-name').show();
+        if (!formState['lastNameValid']) $('#error-last-name').show();
+        if (!formState['emailValid']) $('#input-error-email').show();
+      }
+
+      function validateForm () {
+        var firstName = $("#invite_form_first_name").val();
+        var lastName = $("#invite_form_last_name").val();
+        var email = $("#invite_form_email_address").val();
+                
+        var firstNameValid = firstName.length > 0
+        var lastNameValid = lastName.length > 0
+        var emailValid = email.match(/\w+@\w+\.\w+/) !== null
+        
+        if (firstNameValid && lastNameValid && emailValid) {                    
+          return true;
+        } else {
+          return {
+            "firstNameValid" : firstNameValid,
+            "lastNameValid" : lastNameValid,
+            "emailValid" : emailValid
+          };
+        }
+      };
+      
+      function submitForm() {
         $.ajax({
           type: 'POST',
           url: '/home',
           data: $($('form')[0]).serialize()
         });  
         
-        
+        window.firstName = $("#invite_form_first_name").val();
+        window.email = $("#invite_form_email_address").val();
+
         $("#invite-form-container").fadeOut(500, function() {
-             $("#invite-form-container").html($("#thank-you").html());
-            });
+          $("#invite-form-container").html($("#thank-you-container").html());
+        });
         $("#invite-form-container").fadeIn(500);
-        
-        
-      });
+        $('#email-button').attr('href', "mailto:" + window.email +  "?subject=RSVP%20for%20STYLE%2FSTALK%20launch%20event&body=Hi%2C%20%0A%0AI'm%20so%20excited%20about%20STYLE%2FSTALK's%20launch%20event%2C%20and%20want%20to%20add%20you%20as%20my%20%2B1!%20%20They%20will%20be%20unveiling%20a%20new%20look%2C%20inspired%20by%20the%20creative%20minds%20of%20a%20new%20generation%20of%20tastemakers%20and%20a%20fresh%20approach%20to%20social%20and%20shopping.%0A%0ARSVP%20here%3A%20%20http%3A%2F%2Fstylesta.lk%2Fosevwa%0A%0A" + window.firstName)
+      }
 
-
-    })
+    });
 
     </script>
 
