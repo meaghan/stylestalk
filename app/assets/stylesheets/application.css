@@ -84,6 +84,49 @@ bottom:-13%;
 	background-image: url('button_email_hover.png');
 }
 
+#social-media-buttons {
+	top: 415px;
+	position: relative;
+}
+
+.social-media-button {
+	height: 36px;
+	width: 35px;
+	display: inline-block;
+	margin: 0 7px;
+}
+
+#facebook-button {
+	background: url('fb.png') center top no-repeat;
+}
+#facebook-button:hover {
+	background-image: url('fb_hover.png');
+}
+#twitter-button {
+	background: url('twitter.png') center top no-repeat;
+}
+#twitter-button:hover {
+	background-image: url('twitter_hover.png');
+}
+#gplus-button {
+	background: url('gplus.png') center top no-repeat;
+}
+#gplus-button:hover {
+	background-image: url('gplus_hover.png');
+}
+#pinterest-button {
+	background: url('pinterest.png') center top no-repeat;
+}
+#pinterest-button:hover {
+	background-image: url('pinterest_hover.png');
+}
+#tumblr-button {
+	background: url('tumblr.png') center top no-repeat;
+}
+#tumblr-button:hover {
+	background-image: url('tumblr_hover.png');
+}
+
 /* Used for invite form */
 #invite-form-container {
 /*	background: url(invite_logo_front.png) no-repeat top center;
