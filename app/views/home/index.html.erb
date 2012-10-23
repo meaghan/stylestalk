@@ -173,10 +173,24 @@ $(document).ready(function() {
 
     $("#invite_form_mr, #invite_form_ms").on({
       mouseenter: function(e) {
-        if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).css("color", "#5BD89D")
+        clearTimeout($(this).data('timeoutId'));
+        if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).animate({
+          color: "#5BD89D"
+        }, 300, function() {
+          
+        });
       },
       mouseleave: function(e) {          
-        if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).css("color", "#ccc")
+        // if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).css("color", "#ccc")
+        if ($(e.target).css("color") != "rgb(0, 0, 0)") {
+          var someElement = $(this);
+          var timeoutId = setTimeout(function(){
+            $(e.target).animate({
+              color: "#ccc"
+            }, 300)
+          }, 0);
+          someElement.data('timeoutId', timeoutId);           
+        }
       },
       click: function(e) {
         // $("#invite_form_mr, #invite_form_ms").css("color", "#ccc")
