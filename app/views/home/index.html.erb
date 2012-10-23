@@ -35,7 +35,7 @@
 
         <div>
           <label for="name" class='invite-form-content'>Event details should be sent to </label> 
-          <div class="input-error" id="input-error-email" style="top: 62px;left: 420px;">PLEASE ENTER A VALID EMAIL</div>
+          <div class="input-error" id="input-error-email" style="top: 63px;left: 428px;">PLEASE ENTER A VALID EMAIL</div>
           <input type="text" id="invite_form_email_address" class="invite_form_input" name="user[email]" placeholder="e-mail address" />
           <label for="name" class='invite-form-content'>.</label> 
         </div>      
@@ -124,8 +124,15 @@ $(document).ready(function() {
       
       $('#invite-button').click(function() {
         $("#initial-invite").fadeOut(400);        
+        var windowHeight = $(window).height();
+        var percent;
+        if (windowHeight < 760) {
+          percent = '+=90%'
+        } else {
+          percent = '+=80%'
+        }
         $('#invite-row').animate({    
-          bottom: '+=80%',
+          bottom: percent
         }, 400, function() {
           // console.log()      
         });
@@ -150,10 +157,19 @@ $(document).ready(function() {
           if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).css("color", "#ccc")
         },
         click: function(e) {
+// $("#invite_form_mr, #invite_form_ms").css("color", "#ccc")
+          var selfE = e;
           $("#invite_form_mr, #invite_form_ms").removeClass("selected-gender")
-          $("#invite_form_mr, #invite_form_ms").css("color", "#ccc")
+          $("#invite_form_mr, #invite_form_ms").animate({
+            color: "#ccc"
+          }, 200, function() {
+            $(selfE.target).animate({
+              color : 'black'
+            });
+          });
+            
           $(e.target).addClass("selected-gender");
-          $(e.target).css("color", "black");
+
 
           var gender = $('.selected-gender').attr('id');
           if (gender == 'invite_form_mr') {

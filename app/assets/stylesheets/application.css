@@ -99,21 +99,22 @@ perspective: 800px;
 
 .input-error {		
 	color: red;
+	font-family: ProximaNova-Regular;
 	font-size: 9px;
 	display: none;
 	position: absolute;
-	top: 23px;
+	top: 26px;
 	font-weight: 500;
 	letter-spacing: 1px;
 	opacity: 0.5;
 }
 
 #error-first-name {
-	left: 320px;
+	left: 325px;
 }
 
 #error-last-name {
-	left: 460px;
+	left: 462px;
 }
 
 #invite_form_email_address {
@@ -136,8 +137,7 @@ perspective: 800px;
 	border-left: none;
 	padding: 0px;
 	height: 25px;
-	line-height: 25px;
-	position: relative;
+	line-height: 26px;
 }
 
 input {
