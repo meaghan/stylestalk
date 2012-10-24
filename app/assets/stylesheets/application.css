@@ -153,11 +153,11 @@ perspective: 800px;
 }
 
 #error-first-name {
-	left: 322px;
+	left: 319px;
 }
 
 #error-last-name {
-	left: 459px;
+	left: 456px;
 }
 
 #invite_form_email_address {
@@ -232,12 +232,15 @@ input:-ms-input-placeholder {
 }
 .invite_form_gender {
 	cursor: pointer;
+	font-weight: bold;
+	font-family: ProximaNova-Regular;
 }
 #invite_form_ms {
 }
 #invite_form_mr {
 }
 .selected-gender {
+	
 }
 
 #rsvp-button {
@@ -261,8 +264,9 @@ input:-ms-input-placeholder {
 
 .rsvp-button-text {
 	color: white;
-	font-size: 9px;
-	font-weight: 400;
+	font-family: ProximaNova-Regular;
+	font-size: 12px;
+	font-weight: bold;
 	padding-top: 7px;
 	padding-left: 5px;
 	letter-spacing: 2px;

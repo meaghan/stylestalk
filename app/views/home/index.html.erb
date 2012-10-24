@@ -175,7 +175,7 @@ $(document).ready(function() {
       mouseenter: function(e) {
         if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).animate({
           color: "#5BD89D"
-        }, 700, function() {          
+        }, 300, function() {          
         });
       },
       mouseleave: function(e) {          
@@ -187,10 +187,10 @@ $(document).ready(function() {
         var selfE = e;
         $("#invite_form_mr, #invite_form_ms").removeClass("selected-gender")
         $("#invite_form_mr, #invite_form_ms").animate({
-          color: "#ccc"
+          color: "#ccc"     
         }, 200, function() {
           $(selfE.target).animate({
-            color : 'black'
+            color : 'black'          
           });
         });
 
