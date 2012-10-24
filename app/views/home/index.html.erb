@@ -35,7 +35,7 @@
 
         <div>
           <label for="name" class='invite-form-content'>Event details should be sent to </label> 
-          <div class="input-error" id="input-error-email" style="top: 63px;left: 430px;">PLEASE ENTER A VALID EMAIL</div>
+          <div class="input-error" id="input-error-email" style="top: 63px;left: 413px;">PLEASE ENTER A VALID EMAIL</div>
           <input type="text" id="invite_form_email_address" class="invite_form_input" name="user[email]" placeholder="e-mail address" />
           <label for="name" class='invite-form-content'>.</label> 
         </div>      
@@ -76,7 +76,7 @@
 <div id="thank-you-container">
   <img src="assets/invite_back.png" />
   <div id='thank-you'>
-    <a href="#" id='email-button'></a>
+    <a href="#" id='email-button' onclick="window.open(this.href, ''); return false;"></a>
 
     <div id='social-media-buttons'>
 
@@ -252,8 +252,7 @@ $(document).ready(function() {
 
 
     // social media stuff
-    window.opts = 'status=1,width=775,height=400,menubar=no,location=no';        
-
+    window.opts = 'status=1,width=775,height=400,menubar=no,location=no';          
 
 
   });

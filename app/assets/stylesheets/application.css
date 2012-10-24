@@ -143,21 +143,21 @@ perspective: 800px;
 .input-error {		
 	color: red;
 	font-family: ProximaNova-Regular;
-	font-size: 9px;
+	font-size: 10px;
 	display: none;
 	position: absolute;
 	top: 26px;
-	font-weight: 500;
+	font-weight: bold;
 	letter-spacing: 1px;
 	opacity: 0.5;
 }
 
 #error-first-name {
-	left: 325px;
+	left: 322px;
 }
 
 #error-last-name {
-	left: 462px;
+	left: 459px;
 }
 
 #invite_form_email_address {
