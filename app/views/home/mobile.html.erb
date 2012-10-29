@@ -1,0 +1,302 @@
+<div class="row top"></div>
+
+
+<div class="row" id="invite-row">
+
+  <div class="one columns"></div>
+  <div class="ten columns" id="invite-form-container">
+    <!--<img src="assets/invite_front.png" /> -->
+    <div id="invite-form">
+      <img style="margin-bottom: 25px; margin-top: 10px" src="assets/round_logo.png" />
+
+      <div class="invite-input-line" style='margin-bottom: 27px'>
+        <label for="name" class='invite-form-content' style="font-weight: bold">YOUR PRESENCE IS REQUESTED</label>
+      </div>
+      
+      <form action="/home" accept-charset="UTF-8" method="post">
+        <input type="hidden" id="invite_form_sex" name="user[sex]" value="f" />
+
+        <div class="invite-input-line">
+          <span id='invite_form_mr' class='invite_form_gender'>Mr.</span>
+          <span id='invite_form_slash' class='invite_form_gender'>/</span>
+          <span id='invite_form_ms' class='invite_form_gender selected-gender' style="color: black;">Ms.</span>
+          <div class="input-error" id='error-first-name'>REQUIRED</div>
+          <input type="text" id="invite_form_first_name" class="invite_form_input" name="user[first_name]" style="width: 120px;" placeholder="first" />
+          <div class="input-error" id= 'error-last-name'>REQUIRED</div>
+          <input type="text" id="invite_form_last_name" class="invite_form_input" name="user[last_name]" style="width: 120px; margin-left: 12px" placeholder="last" />
+        </div>      
+
+        <br />
+        <br />
+        <div>
+          <label for="name" class='invite-form-content'>Event details should be sent to </label>           
+        </div>      
+        
+        <div>
+        <div class="input-error" id="input-error-email" style="top: 383px;left: 255px;">PLEASE ENTER A VALID EMAIL</div>
+        <input type="text" id="invite_form_email_address" class="invite_form_input" name="user[email]" placeholder="e-mail address" />
+        <label for="name" class='invite-form-content'>.</label>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="invite-input-line">
+          <label for="name" class='invite-form-content'>For reference, I usually wear a size</label>
+        </div>
+       <div class="invite-input-line">
+          <input type="text" id="invite_form_clothes_size" class="invite_form_input" name="user[clothes_size]" style="width: 30px;" placeholder="#" />
+          <label for="name" class='invite-form-content'>in clothes and</label> 
+          <input type="text" id="invite_form_shoe_size" class="invite_form_input" name="user[shoe_size]" style="width: 30px;" placeholder="#" />
+          <label for="name" class='invite-form-content'>in shoes.</label>             
+        </div>      
+        <br />
+        <br />
+        
+        <div class="invite-input-line">
+          <label for="name" class='invite-form-content'>The individual whose style I most admire is</label>
+          
+        </div>
+        
+        <div class="invite-input-line">
+          <input type="text" id="invite_form_admired_individual" class="invite_form_input" name="user[admired]" style="width: 180px;" placeholder="e.g. carine roitfeld" />
+          <label for="name" class='invite-form-content'>.</label>
+        </div>
+        
+        <br />
+
+        <div id="rsvp-button">
+          <a href="#"><div class="rsvp-button-text">R.S.V.P.</div></a>
+        </div>
+
+        <br/>
+      </div>
+    </div>
+    <div class="one columns"></div>
+  </div>
+
+
+
+</div>
+
+
+
+<!-- THANK YOU SECTION -->
+<div id="thank-you-container">
+  <!--<img src="assets/invite_back.png" /> -->
+  <div id='thank-you'>
+    
+    <div class="invite-input-line" style="margin-top: 30px">
+      <label for="name" class='invite-form-content' style="font-size: 35px;font-weight: bold">THANK YOU</label>
+    </div>
+    
+    <div class="invite-input-line" style="position: relative; margin-top: 30px">
+      <label for="name" class='invite-form-content'>We look forward to celebrating with you.</label>
+    </div>
+    
+    <div class="invite-input-line">
+      <label for="name" class='invite-form-content'>Please feel free to add a few friend as your +1's.</label>
+    </div>
+
+    <a href="mailto:?subject=RSVP%20for%20STYLE%2FSTALK%20launch%20event&body=Hi%2C%20%0A%0AI'm%20so%20excited%20about%20STYLE%2FSTALK's%20launch%20event%2C%20and%20want%20to%20add%20you%20as%20my%20%2B1!%20%20They%20will%20be%20unveiling%20a%20new%20look%2C%20inspired%20by%20the%20creative%20minds%20of%20a%20new%20generation%20of%20tastemakers%20and%20a%20fresh%20approach%20to%20social%20and%20shopping.%0A%0ARSVP%20here%3A%20%20http%3A%2F%2Fstylesta.lk%2Fosevwa%0A%0A" id='email-button'></a>
+    
+    
+    <div class="invite-input-line" style="position: relative; margin-top: 40px">
+      <label for="name" class='invite-form-content'>Or invite them via your favorite network of choice.</label>
+    </div>
+    
+    
+
+    <div id='social-media-buttons'>
+      <a class="social-media-button" id='facebook-button'href="http://www.facebook.com/sharer.php?s=100&amp;p[title]=STYLE/STALK&amp;p[url]=http%3A%2F%2Fstylesta.lk%2FRyVfrG&amp;p[images][0]=http%3A%2F%2F25.media.tumblr.com%2Ftumblr_mcbztpV3hC1r6zhjoo1_250.png&amp;p[summary]=Just%20RSVPed%20for%20STYLE/STALK's%20launch%20event.%20%20Join%20as%20my%20%2B1%20here:%20%20http://stylesta.lk/RyVfrG" onclick="window.open(this.href, 'Share Style/Stalk on Facebook', window.opts); return false;"></a>
+      
+      
+      <a class="social-media-button" id='twitter-button' href="http://twitter.com/share?original_referer=http%3A%2F%2Fstylesta.lk/osevwa&text=Just%20RSVPed%20for%20STYLE/STALK's%20launch%20event.%20%20Join%20as%20my%20%2B1%20here:&url=http://stylesta.lk/osevwa%20%20%23stylestalking" onclick="window.open(this.href, 'Share STYLE/STALK on Pinterest', window.opts); return false;"></a>
+      
+      <a href="https://plus.google.com/share?url=http://www.stylestalk.com" class="social-media-button" id='gplus-button' href="" onclick="window.open(this.href, 'Share STYLE/STALK', window.opts); return false;"></a>
+
+      <a class="social-media-button" id='pinterest-button' href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fstylesta.lk%2Fosevwa&amp;media=http://25.media.tumblr.com/tumblr_mcbz5n249w1r6zhjoo1_500.png&amp;description=Just%20RSVPed%20for%20STYLE/STALK's%20launch%20event.%20%20Join%20as%20my%20%2B1%20here:%20%20http://stylesta.lk/osevwa" onclick="window.open(this.href, 'Share STYLE/STALK on Tumblr', window.opts); return false;"></a>
+      
+      <a class="social-media-button" id='tumblr-button' href="http://www.tumblr.com/share/photo?source=http%3A%2F%2F25.media.tumblr.com%2Ftumblr_mcbz5n249w1r6zhjoo1_500.png&caption=Just%20RSVPed%20for%20STYLE/STALK's%20launch%20event.%20%20Join%20as%20my%20%2B1%20here:%20%20http://stylesta.lk/osevwa&click_thru=http%3A%2F%2Fstylesta.lk%2Fosevwa" onclick="window.open(this.href, 'Share STYLE/STALK on Tumblr', window.opts); return false;"></a>
+            
+    </div>
+  </div>
+
+</div>
+
+
+
+<script>
+// StyleStalk invite image on Tumblr CDN
+// http://25.media.tumblr.com/tumblr_mcbz5n249w1r6zhjoo1_500.png
+// http://stylesta.lk/osevwa
+
+
+// <a href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://www.stylestalk.com"></a>
+
+$(document).ready(function() {
+
+  // TURN THIS OFF BEFORE PUSHING
+  // $('#invite-row').animate({    
+  //   bottom: '+=80%',
+  // }, 300, function() {
+  //   // Animation complete. turn it off
+  //   $('#invite-button').click(function() {});
+  //   $("#initial-invite").hide()
+  //   $("#invite-form-container").html($("#thank-you-container").html());
+  // });      
+
+
+  // AH: This is a weird positioning of the invite button at top before everything loads
+  // to hack around it I'm just hiding it for a bit
+  setTimeout(function() {
+    $("#invite-button").show()
+    }, 10)
+    // AH: hack for :hover psuedoselector not working for some reason
+    $("#invite-button-link").hover(function(){
+      $(this).css("background-image", "url('assets/button_invite_hover.png')")
+    }, function() {
+      $(this).css("background-image", "url('assets/button_invite.png')")        
+    });
+
+
+    $('form').keyup(function() {
+      // clear errors
+      $('.input-error').hide();
+
+      // check first, last, email filled out
+      // turn rsvp green if so
+      if (validateForm() === true) {
+        $("#rsvp-button").css('background-color', "#5BD89D"); 
+      } else {
+        $("#rsvp-button").css('background-color', "#ccc"); 
+      }
+    });            
+
+
+    $("#rsvp-button").click(function() {
+      var formState = validateForm();
+      if (formState === true) {
+        submitForm();
+      } else {
+          displayErrors(formState);
+        }
+
+     });
+
+
+    $("#invite_form_mr, #invite_form_ms").on({
+      mouseenter: function(e) {
+        if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).animate({
+          color: "#5BD89D"
+        }, 300, function() {          
+        });
+      },
+      mouseleave: function(e) {          
+        if ($(e.target).css("color") != "rgb(0, 0, 0)") $(e.target).css("color", "#ccc")
+        var someElement = $(this);
+      },
+      click: function(e) {
+        // $("#invite_form_mr, #invite_form_ms").css("color", "#ccc")
+        var selfE = e;
+        $("#invite_form_mr, #invite_form_ms").removeClass("selected-gender")
+        $("#invite_form_mr, #invite_form_ms").animate({
+          color: "#ccc"     
+        }, 200, function() {
+          $(selfE.target).animate({
+            color : 'black'          
+          });
+        });
+
+        $(e.target).addClass("selected-gender");
+
+
+        var gender = $('.selected-gender').attr('id');
+        if (gender == 'invite_form_mr') {
+          $('#invite_form_sex').val("m")
+        } else {
+          $('#invite_form_sex').val("f")
+        }
+
+      }
+    })
+
+    function displayErrors (formState) {
+      if (!formState['firstNameValid']) $('#error-first-name').show();
+      if (!formState['lastNameValid']) $('#error-last-name').show();
+      if (!formState['emailValid']) $('#input-error-email').show();
+    }
+
+    function validateForm () {
+      var firstName = $("#invite_form_first_name").val();
+      var lastName = $("#invite_form_last_name").val();
+      var email = $("#invite_form_email_address").val();
+
+      var firstNameValid = firstName.length > 0
+      var lastNameValid = lastName.length > 0
+      var emailValid = email.match(/\w+@\w+\.\w+/) !== null
+
+      if (firstNameValid && lastNameValid && emailValid) {                    
+        return true;
+      } else {
+        return {
+          "firstNameValid" : firstNameValid,
+          "lastNameValid" : lastNameValid,
+          "emailValid" : emailValid
+        };
+      }
+    };
+
+    function submitForm() {
+      $.ajax({
+        type: 'POST',
+        url: '/home',
+        data: $($('form')[0]).serialize()
+      });  
+
+      window.firstName = $("#invite_form_first_name").val();
+      window.email = $("#invite_form_email_address").val();
+
+      $("#invite-form-container").fadeOut(500, function() {
+        $("#invite-form-container").html($("#thank-you-container").html());
+      });
+      $("#invite-form-container").fadeIn(500);
+    }
+
+
+    // social media stuff
+    window.opts = 'status=1,width=775,height=400,menubar=no,location=no';          
+
+
+  });
+
+  </script>
+
+<!-- - fix MBA: WTF is wrong with it?!
+- how to position background text (with multiple devices)
+- how to transition
+- implement everything with cardflip http://desandro.github.com/3dtransforms/docs/card-flip.html
+- WAYNE: what's up w/ 1and1? point to http://gentle-atoll-1785.herokuapp.com/
+- 
+
+
+
+
+
+
+Copy:
+Thank you for visiting
+
+We’re so excited to unveil our new look –
+inspired by the creative minds of a new generation of tastemakers
+and a fresh approach to the intersection of social and shopping.
+
+INVITATION 
+Your presence is requested at the launch of
+STYLE/STALK [Logo?]
+
+Mr. / Ms. [First Name] [Last Name]
+Event details should be sent to [Email Address].
+
+For reference, I usually wear a size [#] in clothes and [#] in shoes.
+The individual whose style I most admire is [e.g. Carine Roitfield]. -->

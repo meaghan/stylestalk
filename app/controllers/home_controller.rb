@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-  def index
+  def index    
+    @mobile = mobile?
+    render 'mobile' if mobile?
   end
   
   def create
